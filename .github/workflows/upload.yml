@@ -1,0 +1,29 @@
+on:
+    push:
+      branches: main
+
+jobs:
+    publish-git:
+      runs-on: ubuntu-latest
+      permissions: write-all
+      steps:
+        - uses: actions/checkout@v4
+        #   change name because git required STRICT name checking and i want git npm pkgs.
+        - run: sed -i 's/@neongamerbot/@neongamerbot-qk/g' package.json
+        - uses: JS-DevTools/npm-publish@v3
+          with:
+            token: ${{ secrets.GITHUB_TOKEN }}
+            access: public
+            provenance: true
+            registry: "https://npm.pkg.github.com"
+    publish-npm:
+      runs-on: ubuntu-latest
+      permissions: write-all
+      steps:
+        - uses: actions/checkout@v4
+        - uses: JS-DevTools/npm-publish@v3
+          with:
+            token: ${{ secrets.NPM_TOKEN }}
+            access: public
+            registry: "https://registry.npmjs.org/"
+            provenance: true

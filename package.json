@@ -1,0 +1,14 @@
+{
+  "name": "puppeteer-http-server",
+  "version": "0.0.1",
+  "main": "src/index.js",
+  "author": "Saahil <neon@saahild.com>",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "debug": "^4.4.0",
+    "puppeteer": "^24.1.0"
+  },
+  "devDependencies": {
+    "express": "^4.21.2"
+  }
+}
