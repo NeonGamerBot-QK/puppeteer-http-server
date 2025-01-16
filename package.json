@@ -10,5 +10,9 @@
   },
   "devDependencies": {
     "express": "^4.21.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neongamerbot-qk/puppeteer-http-server"
+   }
 }
